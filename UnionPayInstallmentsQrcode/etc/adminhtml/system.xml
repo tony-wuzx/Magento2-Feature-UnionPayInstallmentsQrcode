@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="zhixing_uiq" translate="label" type="text" sortOrder="82" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>UnionPay Installments Qrcode</label>
+                <field id="title" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="mode" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Mode</label>
+                    <source_model>Zhixing\UnionPay\Model\Config\Source\Modes</source_model>
+                </field>
+                <group id="production" translate="label" type="text" sortOrder="31" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label>Production Configuration</label>
+                    <attribute type="expanded">1</attribute>
+                    <depends>
+                        <field id="mode">production</field>
+                    </depends>
+                    <field id="svc_id" translate="label" type="text" sortOrder="10" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Service ID</label>
+                    </field>
+                    <field id="ser_id" translate="label" type="text" sortOrder="20" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Server ID</label>
+                    </field>
+                    <field id="gateway_qrcode" translate="label" type="text" sortOrder="30" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway Qrcode</label>
+                    </field>
+                    <field id="gateway_query" translate="label" type="text" sortOrder="40" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway Query</label>
+                    </field>
+                    <field id="gateway_refund" translate="label" type="text" sortOrder="50" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway Refund</label>
+                    </field>
+                    <field id="gateway_file_mgm" translate="label" type="text" sortOrder="60" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway File Mgm</label>
+                    </field>
+                    <field id="private_key_pass" translate="label" type="text" sortOrder="70" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Private Key Pass</label>
+                    </field>
+                    <field id="private_key" translate="label comment" type="textarea" sortOrder="80" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Private Key</label>
+                        <comment>
+                            <![CDATA[If no key configured here, module will attempt to find file in module cert folder.]]>
+                        </comment>
+                    </field>
+                    <field id="public_key" translate="label comment" type="textarea" sortOrder="90" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Public Key</label>
+                        <comment>
+                            <![CDATA[If no key configured here, module will attempt to find file in module cert folder.]]>
+                        </comment>
+                    </field>
+                </group>
+                <group id="sandbox" translate="label" type="text" sortOrder="32" showInDefault="1"
+                       showInWebsite="0" showInStore="1">
+                    <label>Sandbox Configuration</label>
+                    <attribute type="expanded">1</attribute>
+                    <depends>
+                        <field id="mode">sandbox</field>
+                    </depends>
+                    <field id="svc_id" translate="label" type="text" sortOrder="10" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Service ID</label>
+                    </field>
+                    <field id="ser_id" translate="label" type="text" sortOrder="20" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Server ID</label>
+                    </field>
+                    <field id="gateway_qrcode" translate="label" type="text" sortOrder="30" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway Qrcode</label>
+                    </field>
+                    <field id="gateway_query" translate="label" type="text" sortOrder="40" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway Query</label>
+                    </field>
+                    <field id="gateway_refund" translate="label" type="text" sortOrder="50" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway Refund</label>
+                    </field>
+                    <field id="gateway_file_mgm" translate="label" type="text" sortOrder="60" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Gateway File Mgm</label>
+                    </field>
+                    <field id="private_key_pass" translate="label" type="text" sortOrder="70" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Private Key Pass</label>
+                    </field>
+                    <field id="private_key" translate="label comment" type="textarea" sortOrder="80" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Private Key</label>
+                        <comment>
+                            <![CDATA[If no key configured here, module will attempt to find file in module cert folder.]]>
+                        </comment>
+                    </field>
+                    <field id="public_key" translate="label comment" type="textarea" sortOrder="90" showInDefault="1"
+                           showInWebsite="0" showInStore="0">
+                        <label>Public Key</label>
+                        <comment>
+                            <![CDATA[If no key configured here, module will attempt to find file in module cert folder.]]>
+                        </comment>
+                    </field>
+                </group>
+                <field id="debug" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_qrcode" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Api Qrcode</label>
+                </field>
+                <field id="api_query" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Api Query</label>
+                </field>
+                <field id="api_refund" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Api Refund</label>
+                </field>
+                <field id="api_file_mgm" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Api File Mgm</label>
+                </field>
+                <field id="notify_url" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Notify URL</label>
+                    <comment><![CDATA[Default: base_url/zhixing_uiq/ipn/callback]]></comment>
+                </field>
+                <field id="return_url" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Return URL</label>
+                    <comment><![CDATA[Default: base_url/zhixing_uiq/payflow/back]]></comment>
+                </field>
+                <field id="pay_way_limit" translate="label" type="select" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Only accept orders which using the payment</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="100" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+                </field>
+                <field id="order_status_payment_accepted" translate="label" type="select" sortOrder="110"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Order status when payment accepted</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+                </field>
+                <field id="enable_repay" translate="label" type="select" sortOrder="120" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Repay</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_logo" translate="label" type="select" sortOrder="130" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Logo</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="expire_time" translate="label" type="text" sortOrder="140" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Expire Time</label>
+                    <frontend_class>validate-number</frontend_class>
+                    <comment>Order expiration time, the default is 1800 seconds</comment>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="150" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Total</label>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="160" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Maximum Order Total</label>
+                </field>
+                <field id="un_support_num" translate="label" type="text" sortOrder="165" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Un Support Installments Num</label>
+                    <comment><![CDATA[Multiple num use symbol '&' to link, e.g. 12&24&36]]></comment>
+                </field>
+                <field id="support_bank" translate="label" type="text" sortOrder="166" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Support Bank</label>
+                    <frontend_model>Zhixing\UnionPayInstallmentsQrcode\Block\Adminhtml\System\Config\Form\Field\BankRender</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="instructions" translate="label" type="textarea" sortOrder="170" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Instructions</label>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="180" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="190" showInDefault="1"
+                       showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="200" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <zhixing_uiq>
+                <title>UnionPay Installments Qrcode</title>
+                <active>1</active>
+                <mode>sandbox</mode>
+                <debug>1</debug>
+                <api_qrcode>up.fpsd.trade.fqwg.qrcode</api_qrcode>
+                <api_query>up.fpsd.trade.fqwg.inquiry</api_query>
+                <api_refund>up.fpsd.trade.fqwg.refund</api_refund>
+                <api_file_mgm>up.fpsd.trade.utp.file.mgm</api_file_mgm>
+                <pay_way_limit>0</pay_way_limit>
+                <model>Zhixing\UnionPayInstallmentsQrcode\Model\Payment</model>
+                <order_status>pending</order_status>
+                <enable_repay>1</enable_repay>
+                <expire_time>1800</expire_time>
+                <order_status_payment_accepted>processing</order_status_payment_accepted>
+                <currency>CNY</currency>
+                <can_refund>1</can_refund>
+                <can_void>0</can_void>
+                <can_use_checkout>1</can_use_checkout>
+                <sort_order>120</sort_order>
+                <!--support_bank default value use patch data instead of setting here, because of:-->
+                <!--magento bug: add array data by this way will get error while saving in admin, fixed in 2.4-->
+                <!--https://github.com/magento/magento2/issues/30314-->
+            </zhixing_uiq>
+        </payment>
+    </default>
+</config>

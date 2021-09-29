@@ -1,0 +1,12 @@
+<?php
+
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Zhixing\UnionPayInstallmentsQrcode\ViewModel\Order\View\Pending $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+<?php if ($viewModel->isUiqOrder() && $viewModel->isPendingOrder() && $viewModel->isEnableRepay()) : ?>
+    <a href="<?= $block->escapeHtml($viewModel->getRedirectUrl()); ?>"
+       class="button action red pay-now" name="uiq_repay" id="uiq_repay">
+        <span><?= $block->escapeHtml(__('Pay Now')); ?></span>
+    </a>
+<?php endif; ?>
